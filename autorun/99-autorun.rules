@@ -1,0 +1,4 @@
+# On adding (ACTION=="add") an USB Drive (SUBSYSTEM=="scsi") execute the given script as Root.
+# The argument (%E{ID_FS_UUID_ENC}) reslves into dhe disk UUID
+
+ACTION=="add", SUBSYSTEMS=="scsi", RUN+="/usr/bin/sudo -u root /home/kret/scripts/autorun.sh '%E{ID_FS_UUID_ENC}'"
